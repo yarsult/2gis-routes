@@ -7,10 +7,9 @@ from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QMe
 from PyQt6.QtWebEngineWidgets import QWebEngineView
 from PyQt6.QtCore import QUrl
 
-
 PORT = 8080
-DIRECTORY = os.path.dirname(os.path.abspath(__file__))  
-DOWNLOAD_FOLDER = os.path.join(os.path.expanduser("~"), "Downloads")  
+DIRECTORY = os.path.dirname(os.path.abspath(__file__))
+DOWNLOAD_FOLDER = os.path.join(os.path.expanduser("~"), "Downloads")
 
 
 class ServerThread(threading.Thread):
@@ -21,7 +20,6 @@ class ServerThread(threading.Thread):
         with socketserver.TCPServer(("", PORT), handler) as httpd:
             print(f"Сервер запущен на http://localhost:{PORT}")
             httpd.serve_forever()
-
 
 
 class MapApp(QWidget):
